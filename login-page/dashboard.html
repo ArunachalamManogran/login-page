@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="./style.css">
+  <style> 
+      body{
+        background-image: url(./login\ bg\ 2.jpg);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+      }
+
+      .content{
+        top: 400px;
+        color: #be7f58;
+        text-align: center;
+        bottom: 120px;
+      }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    h2{
+      text-align: justify;
+      font-size: 20px;
+      bottom: 260px;
+      
+    }
+   
+   
+    
+    .logout-btn {
+      background-color: #5591a9;
+      color: #fff;
+      border: none;
+      right: 34px
+      top: 130px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+</style>
+  </head>
+  <body>
+    <div class="secondpage">
+      <P class="thank-note">
+         
+     
+</div>
+      <div class="content">
+        <h2>Welcome to our login page. Please enter your username and password to access your account.</br>
+           If you don't have an account yet, you can sign up here. Thank you for choosing our platform."</br>
+
+          Feel free to adjust it according to your specific context and needs!</h2>
+        
+         
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  
+    <script>
+      function logout() {
+        // You can implement logout functionality here
+        alert("Logout successful!");
+        // Redirect to the login page after logout
+        window.location.href = "login-page.html";
+      }
+    </script>
+  </body>
+  </html>
+  
+  
+</html>

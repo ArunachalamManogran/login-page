@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <script src="https://kit.fontawesome.com/3e89eed481.js" crossorigin="anonymous"></script>
+</head>
+ <style>
+    *{
+    margin: 0%;
+    padding: 0%;
+    position: relative;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+    body{
+         height: 100vh;
+        width: 100%;
+        background-image: url(./bg2.jpg) ;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+    H1 ,p{
+        color: #be7f58;
+    }
+     .registerbox{
+    left: 80px;
+    padding: 50px 60px 70px;
+    width: 90%;
+    max-width:450px ;
+    position: absolute;
+    left: 33%;
+     text-align: center;    
+   }
+   
+   .registerbox h1{
+    color: #be7f58;
+    margin-bottom: 20px;
+    margin-left: 20px;
+ }
+
+ .inputofregister1{
+    
+    margin-bottom: 40px ;
+ }
+
+ .inputofregister2{
+  margin-bottom: 40px;
+ }
+.inputofregister3{
+    margin-bottom: 40px;
+}
+
+input {
+    position:relative;
+    right: 35px;
+    width: 450px;
+    padding: 0px 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 12px;
+    line-height: 4;
+}
+.fa-solid{
+    right:220px ;
+    top: 35px;
+    font-size: 20px;
+}
+
+.bnt1{
+    margin: 0%;
+    bottom: 10px;
+    left: 10px ;
+}
+
+button{
+    background-color:#be7f58 ;
+    margin: 0%;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.placeholder {
+      display: none;
+      color: #FF5733; /* Adjust color as needed */
+      font-size: 12px; 
+      right: 15%;
+}
+
+
+
+     
+ </style>
+<body>
+    <div class="container">
+      <div class="registerbox">
+        <h1>Register</h1>
+        <form onsubmit="return login()">
+          <div class="insideofbox">
+            <p class="inputofregister1"><i class="fa-solid fa-user"></i>
+              <input id="un" type="text" name="username" placeholder="Username">
+              <span id="invalid-username" class="placeholder">Invalid username (e.g., must be at least 5 characters)</span>
+            </p>
+            <div id="user-alert"></div>
+            <p class="inputofregister2"><i class="fa-solid fa-envelope"></i>
+              <input id="em" type="email" name="email" placeholder="Email">
+              <span id="invalid-email" class="placeholder">Invalid email (e.g., must be a valid email address)</span>
+            </p>
+            <div id="email-alert"></div>
+            <p class="inputofregister3"><i class="fa-solid fa-key fa-flip-horizontal"></i>
+              <input id="ps" type="password" name="password" placeholder="Password">
+              <span id="invalid-password" class="placeholder">Invalid password (e.g., must be at least 8 characters)</span>
+            </p>
+          </div>
+          <div id="password-alert"></div>
+          <button type="submit" class="bnt1">Register</button>
+        </form>
+      </div>
+    </div>
+  
+    <script>
+      function login() {
+      var username = document.getElementById("un").value;
+      var email = document.getElementById("em").value;
+      var password = document.getElementById("ps").value;
+      var isValidUsername = false;
+      var isValidEmail = false;
+      var isValidPassword = false;
+
+      
+      if (username.length >= 4 && username.length <= 12) {
+        isValidUsername = true;
+      } else {
+        document.getElementById("invalid-username").style.display = "inline";
+      }
+
+      
+      if (email.endsWith("@gmail.com")) {
+        isValidEmail = true;
+      } else {
+        document.getElementById("invalid-email").style.display = "inline";
+      }
+
+      
+      if (password.length >= 8) {
+        isValidPassword = true;
+      } else {
+        document.getElementById("invalid-password").style.display = "inline";
+      }
+
+      
+      if (isValidUsername && isValidEmail && isValidPassword) {
+        alert("Registration completed sucessfully");
+        window.location.href = "login-page.html";
+      }
+      
+      return false; 
+      
+    }
+  </script>
+  </body>
+  </html>

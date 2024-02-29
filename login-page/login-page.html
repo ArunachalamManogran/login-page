@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="./style.css">
+  
+  <script src="https://kit.fontawesome.com/3e89eed481.js" crossorigin="anonymous"></script>
+  <style>
+    /* Style for the placeholder text */
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="loginbox">
+      <h1>Login</h1>
+      <form onsubmit="return login()">
+        <div class="insideofbox">
+          <p class="outsideofinput1"><i class="fa-solid fa-user"></i>
+            <input id="un" type="text" name="username" placeholder="Username">
+            <span id="invalid-username" class="placeholder">Invalid username (e.g., must be at least 5 characters)</span>
+          </p>
+          <div id="user-alert"></div>
+          <p class="outsideofinput2"><i class="fa-solid fa-envelope"></i>
+            <input id="em" type="email" name="email" placeholder="Email">
+            <span id="invalid-email" class="placeholder">Invalid email (e.g., must be a valid email address)</span>
+          </p>
+          <div id="email-alert"></div>
+        </div>
+        <p class="outsideofinput3"><i class="fa-solid fa-key fa-flip-horizontal"></i>
+          <input id="ps" type="password" name="password" placeholder="Password">
+          <span id="invalid-password" class="placeholder">Invalid password (e.g., must be at least 8 characters)</span>
+        </p><br>
+        <div id="password-alert"></div>
+        <button type="submit" class="bnt1">Log in</button>
+        <p class="forget"><a href="./register.html"><button type="button">Register</button></a></p>
+      </form>
+     <!-- Empty divs for displaying alert messages -->
+    </div>
+  </div>
+  
+  <script>
+    function login() {
+      var username = document.getElementById("un").value;
+      var email = document.getElementById("em").value;
+      var password = document.getElementById("ps").value;
+      var isValid = false;
+
+      if (username === "luca" && email === "luca123@gmail.com" && password === "12345678") {
+        isValid = true;
+      } else if (username === "Hari" && email === "hari242@gmail.com" && password === "87654321") {
+        isValid = true;
+      } else if (username === "Asal" && email === "asal11@gmail.com" && password === "24681012") {
+        isValid = true;
+        
+      }
+
+      if (!isValid) {
+        // Display placeholder text for invalid inputs
+        if (username !== "luca") {
+          document.getElementById("invalid-username").style.display = "inline";
+        } else {
+          document.getElementById("invalid-username").style.display = "none";
+        }
+        if (email !== "luca123@gmail.com") {
+          document.getElementById("invalid-email").style.display = "inline";
+        } else {
+          document.getElementById("invalid-email").style.display = "none";
+        }
+        if (password !== "12345678") {
+          document.getElementById("invalid-password").style.display = "inline";
+        } else {
+          document.getElementById("invalid-password").style.display = "none";
+        }
+        return false; // Prevent form submission
+      }
+      window.location.href = "dashboard.html";
+      return false;
+       // Allow form submission if validation passes
+    } 
+     </script>
+</body>
+</html>
